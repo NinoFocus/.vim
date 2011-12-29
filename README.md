@@ -7,9 +7,9 @@
 ## 使用
 1.下载 
   
-    git clone https://NinoFocus@github.com/NinoFocus/working-anywhere.git ~/working-anywhere
+    git clone https://NinoFocus@github.com/NinoFocus/.vim.git ~/.vim
   
 
 2.配置
 
-    cp ~/working-anywhere/vim/.vimrc ~/.vimrc
+    cp ~/.vim/.vimrc ~/.vimrc
