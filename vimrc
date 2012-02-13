@@ -15,17 +15,6 @@ set hlsearch
 syntax on               "设置语法高亮
 set nowrap              "关闭自动折行
 set autoread            "当文件在外部被改变时，自动加载
-if has('statusline')
-    set laststatus=2
-
-    " Broken down into easily includeable segments
-    set statusline=%<%f\    " Filename
-    set statusline+=%w%h%m%r " Options
-    set statusline+=\ [%{&ff}/%Y]            " filetype
-    set statusline+=\ [%{getcwd()}]          " current dir
-    "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
 
 " 关闭文件备份，因为大多数东西都是在SVN，GIT上的
 set nobackup
@@ -89,16 +78,16 @@ au FileType ruby set shiftwidth=2
 
 " 改键设置 {{{ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <C-c> "+yaw
-vmap <C-c> "+y
-nmap <C-v> "+p
-imap <C-v> <ESC><C-v>a
-map <silent><C-s> :update<CR> "<Ctrl-s> for saving
-imap <C-s> <ESC>:update<CR>a
-nmap <C-z> :sheel<CR>
+nnoremap <C-c> "+yaw
+vnoremap <C-c> "+y
+nnoremap <C-v> "+p
+inoremap <C-v> <ESC><C-v>a
+noremap <silent><C-s> :update<CR> "<Ctrl-s> for saving
+inoremap <C-s> <ESC>:update<CR>a
+nnoremap <C-z> :sheel<CR>
 
 " Plugin: NERDTree
-nmap ` :NERDTreeToggle<CR>
+nnoremap ` :NERDTreeToggle<CR>
 
 " }}}
 
@@ -117,7 +106,7 @@ au! BufRead,BufNewFile *.vm  setfiletype velocity
 " color and font {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme molokai
-set guifont=Monaco\ 12
+set guifont=Monaco\ 11
 highlight LineNr ctermfg=darkgray 
 " }}}
 
@@ -131,7 +120,11 @@ let g:vimwiki_camel_case = 0
 map <F4>   :Vimwiki2HTML<cr>
 " }}}
 
-" TagList {{{
-let Tlist_JS_Settings = 'javascript;s:string;a:array;o:object;f:function'
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+" tagbar {{{
+nnoremap <F8> :TagbarToggle<CR>
+" }}}
+
+" powerline {{{
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
 " }}}
