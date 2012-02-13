@@ -15,11 +15,24 @@ set hlsearch
 syntax on               "设置语法高亮
 set nowrap              "关闭自动折行
 set autoread            "当文件在外部被改变时，自动加载
+if has('statusline')
+    set laststatus=2
+
+    " Broken down into easily includeable segments
+    set statusline=%<%f\    " Filename
+    set statusline+=%w%h%m%r " Options
+    set statusline+=\ [%{&ff}/%Y]            " filetype
+    set statusline+=\ [%{getcwd()}]          " current dir
+    "set statusline+=\ [A=\%03.3b/H=\%02.2B] " ASCII / Hexadecimal value of char
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
 
 " 关闭文件备份，因为大多数东西都是在SVN，GIT上的
 set nobackup
 set nowb
 set noswapfile
+
+set relativenumber
 " }}}
 
 " Folding 代码折叠 {{{
@@ -98,6 +111,7 @@ filetype indent on
 
 " velocity 模板代码高亮 
 au! BufRead,BufNewFile *.vm  setfiletype velocity 
+
 " }}}
 
 " color and font {{{
@@ -115,4 +129,9 @@ let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/',
 let g:vimwiki_camel_case = 0
 
 map <F4>   :Vimwiki2HTML<cr>
+" }}}
+
+" TagList {{{
+let Tlist_JS_Settings = 'javascript;s:string;a:array;o:object;f:function'
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 " }}}
