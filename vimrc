@@ -109,7 +109,7 @@ au! BufRead,BufNewFile *.vm  setfiletype velocity
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme molokai
 set guifont=Monaco\ 11
-highlight LineNr ctermfg=darkgray 
+"highlight LineNr ctermfg=darkgray 
 " }}}
 
 " vimwiki {{{
