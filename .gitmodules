@@ -13,3 +13,9 @@
 [submodule "bundle/jquery"]
 	path = bundle/jquery
 	url = https://github.com/nono/jquery.vim.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = https://github.com/Shougo/neocomplcache.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
