@@ -1,3 +1,8 @@
+" pathogen 一个管理插件的插件 {{{
+runtime /bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
+" }}}
 
 " 文本编码设置 {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -151,7 +156,6 @@ set laststatus=2
 nnoremap <F8> :NERDTreeToggle<CR>
 " }}}
 
-" pathogen 一个管理插件的插件 {{{
-call pathogen#infect()
-call pathogen#helptags()
+" jquery {{{
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " }}}
