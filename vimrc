@@ -1,8 +1,3 @@
-" pathogen 一个管理插件的插件 {{{
-runtime ~/.vim/bundle/pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-" }}}
 
 " 文本编码设置 {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -154,4 +149,9 @@ set laststatus=2
 
 " nerdtree {{{
 nnoremap <F8> :NERDTreeToggle<CR>
+" }}}
+
+" pathogen 一个管理插件的插件 {{{
+call pathogen#infect()
+call pathogen#helptags()
 " }}}
