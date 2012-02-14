@@ -1,30 +1,36 @@
-" ÎÄ±¾±àÂëÉèÖÃ {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"ÖĞÎÄ±àÂë GBK
-set encoding=utf-8                      "½«vimµÄÄÚ²¿±àÂë¸ñÊ½±äÎªutf-8,ÕâÑùvimÊ¶±ğÎÄ¼şÕıÈ·µÄ×¼È·ĞÔ»áÌá¸ßºÜ¶à
-set fileencoding=cp936                  "µ±ĞÂ½¨Ò»¸öÎÄµµµÄÊ±ºò£¬Ä¬ÈÏ±àÂëÊÇGBK
-set fileencodings=cp936,ucs-bom,utf-8   "ÈÃvim°´ÕÕgbk,utf-8(Ã»ÓĞÍ·),utf-8µÄË³ĞòÊ¶±ğÎÄ¼ş
+" pathogen ä¸€ä¸ªç®¡ç†æ’ä»¶çš„æ’ä»¶ {{{
+runtime ~/.vim/bundle/pathogen/autoload/pathogen.vim
+call pathogen#infect()
+call pathogen#helptags()
 " }}}
 
-" ±à¼­ÏÔÊ¾ÉèÖÃ {{{ 
+" æ–‡æœ¬ç¼–ç è®¾ç½® {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-set go=                 "È¥µô±ß¿ò
-set number              "ÏÔÊ¾ĞĞºÅ
-set incsearch           "ËÑË÷¹Ø¼ü´Ê¸ßÁÁ
-set hlsearch
-syntax on               "ÉèÖÃÓï·¨¸ßÁÁ
-set nowrap              "¹Ø±Õ×Ô¶¯ÕÛĞĞ
-set autoread            "µ±ÎÄ¼şÔÚÍâ²¿±»¸Ä±äÊ±£¬×Ô¶¯¼ÓÔØ
+"ä¸­æ–‡ç¼–ç  GBK
+set encoding=utf-8                      "å°†vimçš„å†…éƒ¨ç¼–ç æ ¼å¼å˜ä¸ºutf-8,è¿™æ ·vimè¯†åˆ«æ–‡ä»¶æ­£ç¡®çš„å‡†ç¡®æ€§ä¼šæé«˜å¾ˆå¤š
+set fileencoding=cp936                  "å½“æ–°å»ºä¸€ä¸ªæ–‡æ¡£çš„æ—¶å€™ï¼Œé»˜è®¤ç¼–ç æ˜¯GBK
+set fileencodings=cp936,ucs-bom,utf-8   "è®©vimæŒ‰ç…§gbk,utf-8(æ²¡æœ‰å¤´),utf-8çš„é¡ºåºè¯†åˆ«æ–‡ä»¶
+" }}}
 
-" ¹Ø±ÕÎÄ¼ş±¸·İ£¬ÒòÎª´ó¶àÊı¶«Î÷¶¼ÊÇÔÚSVN£¬GITÉÏµÄ
+" ç¼–è¾‘æ˜¾ç¤ºè®¾ç½® {{{ 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set go=                 "å»æ‰è¾¹æ¡†
+set number              "æ˜¾ç¤ºè¡Œå·
+set incsearch           "æœç´¢å…³é”®è¯é«˜äº®
+set hlsearch
+syntax on               "è®¾ç½®è¯­æ³•é«˜äº®
+set nowrap              "å…³é—­è‡ªåŠ¨æŠ˜è¡Œ
+set autoread            "å½“æ–‡ä»¶åœ¨å¤–éƒ¨è¢«æ”¹å˜æ—¶ï¼Œè‡ªåŠ¨åŠ è½½
+
+" å…³é—­æ–‡ä»¶å¤‡ä»½ï¼Œå› ä¸ºå¤§å¤šæ•°ä¸œè¥¿éƒ½æ˜¯åœ¨SVNï¼ŒGITä¸Šçš„
 set nobackup
 set nowb
 set noswapfile
 
-set relativenumber
+set relativenumber      "è¡Œå·ç›¸å¯¹äºå…‰æ ‡è®¡ç®—
 " }}}
 
-" Folding ´úÂëÕÛµş {{{
+" Folding ä»£ç æŠ˜å  {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldenable
 set foldmethod=marker
@@ -59,12 +65,12 @@ endfunction " }}}
 set foldtext=MyFoldText()
 " }}}
 
-" ÉèÖÃËõ½ø¿Õ¸ñÊı {{{
-set tabstop=4           "±íÊ¾Ò»¸ötabÏÔÊ¾³öÀ´ÊÇ¶àÉÙ¸ö¿Õ¸ñ£¬Ä¬ÈÏÎª8
-set softtabstop=4       "ÔÚ±à¼­µÄÊ±ºò£¨±ÈÈç°´ÍË¸ñ»òtab¼ü£©Ò»¸ötabÊÇ¶àÉÙ¸ö¿Õ¸ñ
-set shiftwidth=4        "Ã¿Ò»¼¶Ëõ½øÊÇ¶àÉÙ¿Õ¸ñ
-set expandtab           "½«tabÀ©Õ¹³É¿Õ¸ñ; noepandtab ²»À©Õ¹;
-set autoindent          "×Ô¶¯Ëõ½ø
+" è®¾ç½®ç¼©è¿›ç©ºæ ¼æ•° {{{
+set tabstop=4           "è¡¨ç¤ºä¸€ä¸ªtabæ˜¾ç¤ºå‡ºæ¥æ˜¯å¤šå°‘ä¸ªç©ºæ ¼ï¼Œé»˜è®¤ä¸º8
+set softtabstop=4       "åœ¨ç¼–è¾‘çš„æ—¶å€™ï¼ˆæ¯”å¦‚æŒ‰é€€æ ¼æˆ–tabé”®ï¼‰ä¸€ä¸ªtabæ˜¯å¤šå°‘ä¸ªç©ºæ ¼
+set shiftwidth=4        "æ¯ä¸€çº§ç¼©è¿›æ˜¯å¤šå°‘ç©ºæ ¼
+set expandtab           "å°†tabæ‰©å±•æˆç©ºæ ¼; noepandtab ä¸æ‰©å±•;
+set autoindent          "è‡ªåŠ¨ç¼©è¿›
 set smartindent
 " }}}
 
@@ -76,29 +82,25 @@ au FileType ruby set softtabstop=2
 au FileType ruby set shiftwidth=2
 " }}}
 
-" ¸Ä¼üÉèÖÃ {{{ 
+" æ”¹é”®è®¾ç½® {{{ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-c> "+yaw
-vnoremap <C-c> "+y
-nnoremap <C-v> "+p
-inoremap <C-v> <ESC><C-v>a
-noremap <silent><C-s> :update<CR> "<Ctrl-s> for saving
-inoremap <C-s> <ESC>:update<CR>a
-nnoremap <C-z> :sheel<CR>
-
-" Plugin: NERDTree
-nnoremap ` :NERDTreeToggle<CR>
-
+nmap <C-c> "+yaw
+vmap <C-c> "+y
+nmap <C-v> "+p
+imap <C-v> <ESC><C-v>a
+map <silent><C-s> :update<CR> "<Ctrl-s> for saving
+imap <C-s> <ESC>:update<CR>a
+nmap <C-z> :sheel<CR>
 " }}}
 
-" ²å¼şÉèÖÃ {{{ 
+" æ’ä»¶è®¾ç½® {{{ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
 filetype on
 filetype plugin on
 filetype indent on
 
-" velocity Ä£°å´úÂë¸ßÁÁ 
+" velocity æ¨¡æ¿ä»£ç é«˜äº® 
 au! BufRead,BufNewFile *.vm  setfiletype velocity 
 
 " }}}
@@ -114,17 +116,42 @@ highlight LineNr ctermfg=darkgray
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/',
             \'path_html':'~/Dropbox/vimwiki/html',}]
-" ¶ÔÖĞÎÄÓÃ»§À´Ëµ£¬ÎÒÃÇ²¢²»ÔõÃ´ĞèÒªÍÕ·åÓ¢ÎÄ³ÉÎªÎ¬»ù´ÊÌõ
+" å¯¹ä¸­æ–‡ç”¨æˆ·æ¥è¯´ï¼Œæˆ‘ä»¬å¹¶ä¸æ€ä¹ˆéœ€è¦é©¼å³°è‹±æ–‡æˆä¸ºç»´åŸºè¯æ¡
 let g:vimwiki_camel_case = 0
 
 map <F4>   :Vimwiki2HTML<cr>
 " }}}
 
 " tagbar {{{
-nnoremap <F8> :TagbarToggle<CR>
+let g:tagbar_compact    = 1 " Remove empty lines by default
+let g:tagbar_autofocus  = 1
+let g:tagbar_autoshowtag= 1
+let g:tagbar_iconchars  =  ['â–¸', 'â–¾']
+let g:tagbar_type_html = {
+    \ 'ctagstype' : 'html',
+    \ 'kinds' : [
+    \ 'h:Headers',
+    \ 'o:Objects(ID)',
+    \ 'c:Classes'
+    \ ]
+    \ }
+let g:tagbar_type_css = {
+    \ 'ctagstype' : 'css',
+    \ 'kinds' : [
+    \ 't:Tags(Elements)',
+    \ 'o:Objects(ID)',
+    \ 'c:Classes'
+    \ ]
+    \ }
+
+nnoremap <F9> :TagbarToggle<CR>
 " }}}
 
 " powerline {{{
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
+" }}}
+
+" nerdtree {{{
+nnoremap <F8> :NERDTreeToggle<CR>
 " }}}
