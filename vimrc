@@ -74,13 +74,6 @@ set autoindent          "自动缩进
 set smartindent
 " }}}
 
-" ruby {{{
-" """""""""""""""""""""""""""""""""""""""""""""""""""""
-au FileType ruby nmap<buffer> <leader>r :!ruby "%"<CR>
-au FileType ruby set tabstop=2
-au FileType ruby set softtabstop=2
-au FileType ruby set shiftwidth=2
-" }}}
 
 " 改键设置 {{{ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -175,4 +168,11 @@ augroup ft_css
     au Filetype less,css setlocal iskeyword+=-
     au BufNewFile,BufRead *.less,*.css nnoremap <buffer> <localleader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
 augroup END
+
+" Ruby 
+au FileType ruby nmap<buffer> <leader>r :!ruby "%"<CR>
+au FileType ruby set tabstop=2
+au FileType ruby set softtabstop=2
+au FileType ruby set shiftwidth=2
+
 " }}}
