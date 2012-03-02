@@ -28,3 +28,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
+[submodule "bundle/fdlint"]
+	path = bundle/fdlint
+	url = https://github.com/qhwa/fdlint-vim.git
