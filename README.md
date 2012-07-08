@@ -13,3 +13,11 @@
 2.配置
 
     cp ~/.vim/.vimrc ~/.vimrc
+
+
+3.下载插件
+
+    cd .vim
+    git submodule init
+    git submodule update
+

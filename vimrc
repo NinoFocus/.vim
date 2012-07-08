@@ -100,7 +100,7 @@ au! BufRead,BufNewFile *.vm  setfiletype velocity
 " color and font {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme molokai
-set guifont=Monaco\ 11
+"set guifont=Monaco\ 11
 "highlight LineNr ctermfg=darkgray 
 " }}}
 
